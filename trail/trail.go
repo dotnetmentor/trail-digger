@@ -43,6 +43,8 @@ type Record struct {
 	AwsRegion         string    `json:"awsRegion"`
 	SourceIPAddress   string    `json:"sourceIPAddress"`
 	UserAgent         string    `json:"userAgent"`
+	ErrorCode         string    `json:"errorCode,omitempty"`
+	ErrorMessage      string    `json:"errorMessage,omitempty"`
 	RequestParameters struct {
 		BucketName               string `json:"bucketName"`
 		Host                     string `json:"Host"`

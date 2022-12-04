@@ -1,4 +1,4 @@
-module github.com/pepabo/trail-digger
+module github.com/dotnetmentor/trail-digger
 
 go 1.17
 

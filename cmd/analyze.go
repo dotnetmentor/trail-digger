@@ -30,8 +30,8 @@ import (
 	"time"
 
 	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/dotnetmentor/trail-digger/trail"
 	"github.com/olekukonko/tablewriter"
-	"github.com/pepabo/trail-digger/trail"
 	"github.com/spf13/cobra"
 )
 

@@ -3,7 +3,7 @@ package output
 import (
 	"io"
 
-	"github.com/pepabo/trail-digger/trail"
+	"github.com/dotnetmentor/trail-digger/trail"
 )
 
 type Output interface {

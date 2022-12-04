@@ -6,7 +6,7 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"github.com/pepabo/trail-digger/trail"
+	"github.com/dotnetmentor/trail-digger/trail"
 )
 
 type Table struct {

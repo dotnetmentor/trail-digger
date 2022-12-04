@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"io"
 
-	"github.com/pepabo/trail-digger/trail"
+	"github.com/dotnetmentor/trail-digger/trail"
 )
 
 type Json struct {

@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/pepabo/trail-digger/trail"
+	"github.com/dotnetmentor/trail-digger/trail"
 )
 
 const (

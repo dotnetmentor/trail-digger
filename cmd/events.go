@@ -26,8 +26,8 @@ import (
 	"time"
 
 	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/pepabo/trail-digger/output"
-	"github.com/pepabo/trail-digger/trail"
+	"github.com/dotnetmentor/trail-digger/output"
+	"github.com/dotnetmentor/trail-digger/trail"
 	"github.com/spf13/cobra"
 )
 

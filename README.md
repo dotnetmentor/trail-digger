@@ -12,26 +12,26 @@
 
 #### Show the events of 2022/02/03 for AWS account/default region of `my-profile` in order of timeline
 
-``` console
+```console
 $ env AWS_PROFILE=my-profile trail-digger events s3://your-trail-log-bucket --date 2022/02/03
 ```
 
 #### Show the events of 2022/02 for AWS account/us-west-2 of `my-profile` in order of timeline
 
-``` console
+```console
 $ env AWS_PROFILE=my-profile trail-digger events s3://your-trail-log-bucket --date 2022/02 --region us-west-2
 ```
 
 #### Show the events of 2022/01 for AWS account(1234567890)/all regions in order of timeline
 
-``` console
-$ env AWS_PROFILE=my-profile trail-digger events s3://your-trail-log-bucket --date 2022/01 --account 1234567890 --all-regions 
+```console
+$ env AWS_PROFILE=my-profile trail-digger events s3://your-trail-log-bucket --date 2022/01 --account 1234567890 --all-regions
 ```
 
 #### Show the events of 2022/01/04 for all AWS accounts/all regions in order of timeline
 
-``` console
-$ env AWS_PROFILE=my-profile trail-digger events s3://your-trail-log-bucket --date 2022/01/04 --all-accounts --all-regions 
+```console
+$ env AWS_PROFILE=my-profile trail-digger events s3://your-trail-log-bucket --date 2022/01/04 --all-accounts --all-regions
 ```
 
 ### `trail-digger analyze`
@@ -40,7 +40,7 @@ $ env AWS_PROFILE=my-profile trail-digger events s3://your-trail-log-bucket --da
 
 The usage is the same as `trail-digger analyze`, but it outputs the analysis results.
 
-``` console
+```console
 $ AWS_PROFILE=my-profile trail-digger analyze s3://your-trail-log-bucket
 2022-02-15T07:27:48+09:00 INF Digging trail logs prefix=AWSLogs/1234567890/CloudTrail/ap-northeast-1/2022/02/15/
 2022-02-15T07:28:07+09:00 INF Digging trail logs prefix=AWSLogs/1234567890/CloudTrail/ap-northeast-1/2022/02/16/
@@ -94,15 +94,15 @@ In addition, for `trail-digger events` and `trail-digger analyze`, the aggregati
 **homebrew tap:**
 
 ```console
-$ brew install pepabo/tap/trail-digger
+$ brew install dotnetmentor/tap/trail-digger
 ```
 
 **manually:**
 
-Download binany from [releases page](https://github.com/pepabo/trail-digger/releases)
+Download binany from [releases page](https://github.com/dotnetmentor/trail-digger/releases)
 
 **go install:**
 
 ```console
-$ go install github.com/pepabo/trail-digger@latest
+$ go install github.com/dotnetmentor/trail-digger@latest
 ```

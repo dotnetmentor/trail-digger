@@ -22,12 +22,21 @@ THE SOFTWARE.
 package cmd
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/goccy/go-json"
-	"github.com/pepabo/trail-digger/trail"
+	"github.com/dotnetmentor/trail-digger/output"
+	"github.com/dotnetmentor/trail-digger/trail"
 	"github.com/spf13/cobra"
+)
+
+var (
+	outputFormat  string
+	outputOptions output.Options = output.Options{
+		Fields:     []string{},
+		ErrorsOnly: false,
+	}
 )
 
 var eventsCmd = &cobra.Command{
@@ -41,14 +50,28 @@ var eventsCmd = &cobra.Command{
 		if err != nil {
 			return err
 		}
+
+		var out output.Output
+		switch outputFormat {
+		case output.TypeTable:
+			out = output.NewTable(cmd.OutOrStderr(), outputOptions)
+		default:
+			out = output.NewJson(outputOptions)
+		}
+
 		if err := trail.WalkEvents(sess, dsn, opt, func(r *trail.Record) error {
-			b, err := json.Marshal(r)
+			err := out.Write(cmd.OutOrStderr(), r)
 			if err != nil {
 				return err
 			}
-			cmd.Println(string(b))
 			return nil
 		}); err != nil {
+			out.Flush()
+			return err
+		}
+
+		err = out.Flush()
+		if err != nil {
 			return err
 		}
 		return nil
@@ -65,4 +88,7 @@ func init() {
 	eventsCmd.Flags().BoolVarP(&opt.AllAccounts, "all-accounts", "A", false, "all accounts")
 	eventsCmd.Flags().BoolVarP(&opt.AllRegions, "all-regions", "R", false, "all regions")
 	eventsCmd.Flags().StringVarP(&opt.LogFilePrefix, "log-file-prefix", "p", "", "log file prefix")
+	eventsCmd.Flags().StringVarP(&outputFormat, "output", "o", output.TypeJson, fmt.Sprintf("output format (%s|%s)", output.TypeJson, output.TypeTable))
+	eventsCmd.Flags().StringSliceVarP(&outputOptions.Fields, "fields", "", []string{output.FieldEventTime, output.FieldEventID, output.FieldRecipientAccountID, output.FieldAwsRegion, output.FieldEventSource, output.FieldEventType, output.FieldEventName, output.FieldErrorCode}, "output selected fields")
+	eventsCmd.Flags().BoolVarP(&outputOptions.ErrorsOnly, "errors-only", "", false, "filter for errors")
 }

@@ -25,8 +25,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/pepabo/trail-digger/trail"
-	"github.com/pepabo/trail-digger/version"
+	"github.com/dotnetmentor/trail-digger/trail"
+	"github.com/dotnetmentor/trail-digger/version"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"

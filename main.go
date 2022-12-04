@@ -21,7 +21,7 @@ THE SOFTWARE.
 */
 package main
 
-import "github.com/pepabo/trail-digger/cmd"
+import "github.com/dotnetmentor/trail-digger/cmd"
 
 func main() {
 	cmd.Execute()

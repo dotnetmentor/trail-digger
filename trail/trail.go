@@ -78,6 +78,11 @@ type Record struct {
 	RecipientAccountID string `json:"recipientAccountId"`
 	SharedEventID      string `json:"sharedEventID"`
 	EventCategory      string `json:"eventCategory"`
+	TLSDetails         struct {
+		TLSVersion               string `json:"tlsVersion,omitempty"`
+		CipherSuite              string `json:"cipherSuite,omitempty"`
+		ClientProvidedHostHeader string `json:"clientProvidedHostHeader,omitempty"`
+	} `json:"tlsDetails,omitempty"`
 }
 
 type Option struct {

@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.4.0](https://github.com/dotnetmentor/trail-digger/compare/v0.3.0...v0.4.0) (2023-08-15)
+
+
 ## [v0.3.0](https://github.com/dotnetmentor/trail-digger/compare/v0.2.2...v0.3.0) (2022-12-04)
 
 * Feature: Output formatting and filtering [#2](https://github.com/dotnetmentor/trail-digger/pull/2) ([kristofferahl](https://github.com/kristofferahl))
